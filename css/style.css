@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('carrousel.css');
 @import url('reset.css');
 :root{
     --cor-do-fundo:#121212;
@@ -44,6 +45,8 @@ footer{
     flex-direction: row;
     padding: 2rem;
     background-color: var(--cor-da-footer);
+    align-items: center;
+    justify-content: center;
 }
 .titulo{
     font-size: 28px;
@@ -99,9 +102,15 @@ form button:hover{
 }
 .item img{
     width: 100%;
-    
+
 }
 .title-filmes{
     color: var(--cor-titulo-dos-filmes);
     font-weight: 700;
+}
+.ancora{
+    text-decoration: none;
+}
+.ancora:hover{
+    zoom: 1.1;
 }
