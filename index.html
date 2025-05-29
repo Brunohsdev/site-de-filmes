@@ -11,26 +11,14 @@
     <header class="cabecalho">
         <h1 class="titulo titulo_header">Filmes+</h1>
         <form class="formulario_pesquisa">
-            <input id="pesquisar" placeholder="Digite o nome do filme" >
+            <input name="pesquisar" placeholder="Digite o nome do filme" >
             <button class="button_pesquisar">Pesquisar</button>
         </form>
         <div class="vazio"></div>
     </header>
     <main>
         <div class="lista">
-            <div class="item">
-                <img src="img/b081396fec6bafa9d0eb545cb70da31f.jpg" alt="">
-                <h2></h2>
-                <img src="" alt="">
-            </div>
-            <div class="item">
-                <img src="" alt="">
-                <h2></h2>
-            </div>
-            <div class="item">
-                <img src="" alt="">
-                <h2></h2>
-            </div>
+          
         </div>
     </main>
     <footer class="final">
@@ -39,5 +27,37 @@
         <img src="" alt="">
         <img src="" alt="">
     </footer>
+    <script>
+        const apikey = '59ed8138';
+    const formulario = document.querySelector(".formulario_pesquisa");
+    formulario.onsubmit = (ev) =>{
+        ev.preventDefault();
+        
+        const pesquisar = ev.target.pesquisar.value;
+        if(pesquisar == ""){
+            alert('Preencha o campo!');
+            return;
+}
+        fetch(`https://www.omdbapi.com/?s=${pesquisar}&apikey=${apikey}`)
+        .then(result => result.json())
+        .then(json => carregaLista(json))
+        const carregaLista = (json) => {
+            const lista = document.querySelector(".lista")
+            lista.innerHTML = "";
+            
+            if(json.Response == 'False'){
+                alert('Nenhum Filme Encontrado');
+                return
+            }
+            json.Search.forEach(element => {
+                console.log(element)
+                let item = document.createElement("div");
+                item.classList.add("item");
+                item.innerHTML = `<img src="${element.Poster}" /><h2 class ="title-filmes"> ${element.Title}</h2>`
+                lista.appendChild(item);
+            });
+        }
+    }
+    </script>
 </body>
 </html>

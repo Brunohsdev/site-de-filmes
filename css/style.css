@@ -75,17 +75,33 @@ form button{
     padding: 0.5rem 1rem;
     border-radius: 8px ;
 }
+form button:hover{
+    background-color: var(--cor-do-fundo);
+    color: var(--cor-do-title-site);
+}
 
 .lista{
     margin-top: 1.2rem;
     padding: 0..6px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
 }
 .item{
     text-align: center;
     padding: 10px;
     width: 200px;
 }
+.item:hover{
+    background-color: var(--cor-titulo-dos-filmes)
+    cur
+}
 .item img{
     width: 100%;
+    
+}
+.title-filmes{
+    color: var(--cor-titulo-dos-filmes);
+    font-weight: 700;
 }
