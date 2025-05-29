@@ -1,0 +1,91 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('reset.css');
+:root{
+    --cor-do-fundo:#121212;
+    --cor-do-header: #1F1F1F;	
+    --cor-do-main: #181818	;
+    --cor-da-footer: #1F1F1F;
+    --cor-do-title-site: #D4AF37;
+    --cor-titulo-dos-filmes:#E0E0E0;
+    --texto-secundario: #A8A8A8;
+    --branco: #fcfcfcfd;
+    --fonte-do-site: "Lora", serif;
+}
+*{
+    font-size: 18px;
+    font-family: var(--fonte-do-site);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-do-fundo);
+    height: 100vh;
+
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: var(--cor-do-header);
+    justify-content: space-around;
+    
+}
+main{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: var(--cor-do-main);
+    align-items: center;
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    background-color: var(--cor-da-footer);
+}
+.titulo{
+    font-size: 28px;
+    color: var(--cor-do-title-site);
+    
+    
+}
+form{
+    display: flex;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+form input{
+    padding: 1rem;
+    border-radius: 8rem;
+    width: 100%;
+    text-align: center;
+    margin: 0 1rem 0 0;
+    background-size: 20px;
+}
+form input::placeholder{
+    color: var(--cor-do-header);
+}
+form button{
+    padding: 0.5rem 1rem;
+    border-radius: 8px ;
+}
+
+.lista{
+    margin-top: 1.2rem;
+    padding: 0..6px;
+    display: flex;
+}
+.item{
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+}
+.item img{
+    width: 100%;
+}
